@@ -21,21 +21,46 @@ const BenefitsSection = () => {
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {commissions.map((item) => (
-            <div
-              key={item.title}
-              className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 group"
-            >
-              <div className="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/25 transition-colors">
-                <item.icon className="w-7 h-7 text-primary" />
+          {commissions.map((item) => {
+            const tierStyles = {
+              base: {
+                card: "bg-card border border-border",
+                icon: "bg-primary/10",
+                value: "text-primary",
+              },
+              mid: {
+                card: "bg-card border-2 border-primary/40 shadow-lg shadow-primary/5",
+                icon: "bg-primary/20",
+                value: "text-primary",
+              },
+              top: {
+                card: "bg-gradient-to-b from-primary/20 via-primary/10 to-card border-2 border-primary shadow-xl shadow-primary/20 scale-105",
+                icon: "bg-primary/30",
+                value: "text-primary drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]",
+              },
+            }[item.tier];
+
+            return (
+              <div
+                key={item.title}
+                className={`${tierStyles.card} rounded-xl p-8 hover:-translate-y-1 transition-all duration-300 group`}
+              >
+                <div className={`w-14 h-14 rounded-full ${tierStyles.icon} flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/25 transition-colors`}>
+                  <item.icon className="w-7 h-7 text-primary" />
+                </div>
+                <p className="text-muted-foreground text-sm font-medium mb-2 uppercase tracking-wider">
+                  {item.title}
+                </p>
+                <p className={`text-5xl font-extrabold ${tierStyles.value} mb-1`}>{item.value}</p>
+                <p className="text-muted-foreground">{item.subtitle}</p>
+                {item.tier === "top" && (
+                  <span className="inline-block mt-4 text-xs font-bold uppercase tracking-widest text-primary bg-primary/15 px-3 py-1 rounded-full">
+                    ⭐ Melhor recompensa
+                  </span>
+                )}
               </div>
-              <p className="text-muted-foreground text-sm font-medium mb-2 uppercase tracking-wider">
-                {item.title}
-              </p>
-              <p className="text-5xl font-extrabold text-primary mb-1">{item.value}</p>
-              <p className="text-muted-foreground">{item.subtitle}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 border border-primary/30 rounded-xl p-6 inline-block">
