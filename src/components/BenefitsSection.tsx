@@ -1,10 +1,10 @@
 import { Gift, Star, Trophy } from "lucide-react";
 
 const commissions = [
-  { icon: Gift, title: "1ª Indicação", value: "5%", subtitle: "de comissão" },
-  { icon: Star, title: "3ª Indicação", value: "7%", subtitle: "de comissão" },
-  { icon: Trophy, title: "5ª Indicação", value: "10%", subtitle: "de comissão" },
-];
+  { icon: Gift, title: "1ª Indicação", value: "5%", subtitle: "de comissão", tier: "base" },
+  { icon: Star, title: "3ª Indicação", value: "7%", subtitle: "de comissão", tier: "mid" },
+  { icon: Trophy, title: "5ª Indicação", value: "10%", subtitle: "de comissão", tier: "top" },
+] as const;
 
 const BenefitsSection = () => {
   return (
