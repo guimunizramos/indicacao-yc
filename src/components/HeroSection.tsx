@@ -15,7 +15,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
 
       {/* Logo header */}
-      <div className="absolute top-0 left-0 right-0 z-20 px-6 py-6">
+      <div className="absolute top-0 left-0 right-0 z-20 px-4 md:px-6 py-6">
         <div className="container mx-auto max-w-5xl flex justify-center">
           <img src={logo} alt="YouCon Arquitetura e Engenharia" className="h-12 md:h-16" />
         </div>
