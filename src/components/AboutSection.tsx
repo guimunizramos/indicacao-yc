@@ -8,15 +8,15 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6 bg-card/50">
+    <section className="py-24 px-6 bg-primary">
       <div className="container mx-auto max-w-5xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-primary-foreground">
               YouCon: Construindo Sonhos com{" "}
-              <span className="text-gradient">Excelência</span>
+              <span className="text-background">Excelência</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8">
               A YouCon Arquitetura e Engenharia é especialista em transformar
               ideias em realidade, oferecendo soluções completas e inovadoras.
               Nossa paixão é criar espaços que inspiram e superam expectativas.
@@ -27,12 +27,12 @@ const AboutSection = () => {
             {features.map((feature) => (
               <div
                 key={feature.text}
-                className="flex items-start gap-4 bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition-colors"
+                className="flex items-start gap-4 bg-background/15 border border-primary-foreground/20 rounded-xl p-5 hover:bg-background/25 transition-colors"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
-                  <feature.icon className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 rounded-lg bg-primary-foreground/20 flex items-center justify-center shrink-0">
+                  <feature.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <p className="text-foreground/90">{feature.text}</p>
+                <p className="text-primary-foreground/90">{feature.text}</p>
               </div>
             ))}
           </div>
