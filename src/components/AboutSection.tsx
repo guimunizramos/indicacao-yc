@@ -27,12 +27,12 @@ const AboutSection = () => {
             {features.map((feature) => (
               <div
                 key={feature.text}
-                className="flex items-start gap-4 bg-background/15 border border-primary-foreground/20 rounded-xl p-5 hover:bg-background/25 transition-colors"
+                className="flex items-start gap-4 bg-background rounded-xl p-5 hover:bg-background/90 transition-colors"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary-foreground/20 flex items-center justify-center shrink-0">
-                  <feature.icon className="w-5 h-5 text-primary-foreground" />
+                <div className="w-10 h-10 rounded-lg bg-[#ff7300]/20 flex items-center justify-center shrink-0">
+                  <feature.icon className="w-5 h-5 text-[#ff7300]" />
                 </div>
-                <p className="text-primary-foreground/90">{feature.text}</p>
+                <p className="text-primary-foreground font-bold">{feature.text}</p>
               </div>
             ))}
           </div>
