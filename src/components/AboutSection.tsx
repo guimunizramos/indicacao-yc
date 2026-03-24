@@ -8,13 +8,13 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6 bg-primary">
+    <section className="py-24 px-6 bg-[#ff7300]">
       <div className="container mx-auto max-w-5xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-primary-foreground">
               YouCon: Construindo Sonhos com{" "}
-              <span className="text-background">Excelência</span>
+              <span className="text-primary-foreground">Excelência</span>
             </h2>
             <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8">
               A YouCon Arquitetura e Engenharia é especialista em transformar
