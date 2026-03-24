@@ -123,9 +123,9 @@ const FormSection = () => {
   // Success page
   if (submitted) {
     return (
-      <section id="formulario" className="py-24 px-6">
+      <section id="formulario" className="py-16 md:py-24 px-3 md:px-6">
         <div className="container mx-auto max-w-2xl text-center">
-          <div className="bg-card border border-primary/30 rounded-2xl p-12">
+          <div className="bg-card border border-primary/30 rounded-2xl p-6 md:p-12">
             <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-6 animate-bounce">
               <Rocket className="w-10 h-10 text-accent" />
             </div>
