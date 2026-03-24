@@ -186,7 +186,7 @@ const FormSection = () => {
           </div>
         </div>
 
-        <div className="bg-card border border-border rounded-2xl p-8">
+        <div className="bg-card border border-border rounded-2xl p-4 md:p-8">
           {step === 1 && (
             <div className="space-y-5">
               <h3 className="text-lg font-bold text-primary mb-2">Seus Dados</h3>
