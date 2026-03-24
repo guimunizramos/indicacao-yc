@@ -8,7 +8,7 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6 bg-[#ff7300]">
+    <section className="py-16 md:py-24 px-3 md:px-6 bg-[#ff7300]">
       <div className="container mx-auto max-w-5xl">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>

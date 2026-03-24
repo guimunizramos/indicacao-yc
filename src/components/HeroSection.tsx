@@ -21,7 +21,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-24 text-center max-w-4xl">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 py-24 text-center max-w-4xl">
         <div className="inline-block mb-6 px-4 py-2 rounded-full border border-primary/30 bg-primary/10">
           <span className="text-primary text-sm font-semibold tracking-wide uppercase">
             Programa de Indicações
