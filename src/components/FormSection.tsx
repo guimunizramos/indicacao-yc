@@ -7,7 +7,7 @@ const estados = [
   "PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO",
 ];
 
-const relacaoOptions = ["Já sou cliente", "Sou parceiro", "Sou corretor", "Outros"];
+const relacaoOptions = ["Já sou cliente", "Sou parceiro", "Sou corretor", "Faço parte da Comunidade", "Sou colaborador", "Outros"];
 const pixTypes = ["CPF", "Celular", "E-mail"];
 const interesseOptions = [
   "Projeto Residencial",
