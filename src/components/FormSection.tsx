@@ -342,9 +342,10 @@ const FormSection = () => {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(120_61%_50%/0.3)]"
+                  disabled={sending}
+                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(120_61%_50%/0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Enviar Indicação
+                  {sending ? "Enviando..." : "Enviar Indicação"}
                 </button>
               </div>
             </form>
