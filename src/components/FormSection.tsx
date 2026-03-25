@@ -185,10 +185,10 @@ const FormSection = () => {
                 Fazer nova indicação
               </button>
               <a
-                href="/"
-                className="border border-border hover:border-primary text-foreground font-bold px-8 py-3 rounded-lg transition-colors"
+                href="https://chat.whatsapp.com/BxXxLl9oORFDK16nmeBaX7"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg transition-colors"
               >
-                Voltar para o site
+                Acessar Comunidade
               </a>
             </div>
           </div>
