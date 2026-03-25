@@ -95,7 +95,9 @@ const FormSection = () => {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nomeIndicado.trim() || !form.telefoneIndicado.trim() || !form.estado || !form.cidade.trim() || !form.interesse) {
       toast.error("Preencha todos os campos obrigatórios.");
@@ -105,8 +107,42 @@ const FormSection = () => {
       toast.error("Você precisa aceitar os termos para continuar.");
       return;
     }
-    setSubmitted(true);
-    toast.success("Indicação enviada com sucesso!");
+
+    setSending(true);
+    try {
+      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/indicacao", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Basic YWRtaW46MTIzNDU2",
+        },
+        body: JSON.stringify({
+          nome: form.nome,
+          relacao: form.relacao,
+          telefone: form.telefone,
+          email: form.email,
+          pixTipo: form.pixTipo,
+          pixChave: form.pixChave,
+          nomeIndicado: form.nomeIndicado,
+          telefoneIndicado: form.telefoneIndicado,
+          estado: form.estado,
+          cidade: form.cidade,
+          interesse: form.interesse,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erro ${response.status}`);
+      }
+
+      setSubmitted(true);
+      toast.success("Indicação enviada com sucesso!");
+    } catch (error) {
+      console.error("Erro ao enviar indicação:", error);
+      toast.error("Erro ao enviar indicação. Tente novamente.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const resetForm = () => {
@@ -306,9 +342,10 @@ const FormSection = () => {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(120_61%_50%/0.3)]"
+                  disabled={sending}
+                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_hsl(120_61%_50%/0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Enviar Indicação
+                  {sending ? "Enviando..." : "Enviar Indicação"}
                 </button>
               </div>
             </form>
