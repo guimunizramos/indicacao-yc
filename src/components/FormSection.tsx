@@ -135,6 +135,14 @@ const FormSection = () => {
         throw new Error(`Erro ${response.status}`);
       }
 
+      // 🔥 Dispara o evento Lead para o Meta Pixel
+      if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead', {
+          content_name: 'Indicacao YouCon',
+          content_category: form.interesse,
+        });
+      }
+
       setSubmitted(true);
       toast.success("Indicação enviada com sucesso!");
     } catch (error) {
